@@ -1,0 +1,50 @@
+table{
+    background: rgb(25, 35, 70);
+    color:white;
+    text-align:center;
+    border: 2px solid #0b0e19;
+    th{
+        height: 64px;
+        background-color: rgb(11, 14, 25);
+        color: white;
+    }
+   td{
+    padding: 13px;
+    }
+
+    tr{
+        button{
+            padding: 12px;
+            cursor: pointer;
+            background: #0b0e19;
+            color: white;
+            border-radius: 12px;
+            text-transform: capitalize;
+            font-family: monospace;
+            box-shadow: 9px 12px 7px -5px black;
+        }
+    }
+}
+
+
+.backbtn{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:30px;
+    button[rel = "back"]{
+        padding: 12px;
+        cursor: pointer;
+        background: #0b0e19;
+        color: white;
+        border-radius: 12px;
+        text-transform: capitalize;
+        font-family: monospace;
+        box-shadow: 9px 12px 7px -5px black;
+        position: relative;
+        margin:auto !important;
+}
+}
+
+

@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import Userprofile from './Components/Userprofile/userprofile';
+import { Route , Routes } from 'react-router-dom';
+import Order from './Components/Order/order';
+import Address from './Components/Adderss/address';
+import { BrowserRouter } from 'react-router-dom';
+import { useState } from 'react';
+import Lineitems from './Components/lineItems/lineitem';
+import SingleProduct from './Components/SingleProduct/SingleProduct';
+
 
 function App() {
+
+  const [userProfileData,setUserProfileData] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+          <Routes>
+              <Route path='/' element={<Userprofile setUserProfileData={setUserProfileData} />} />
+              <Route path='/order' element={<Order userProfileData={userProfileData} />} />
+              <Route path='/address' element={<Address userProfileData={userProfileData} />} />
+              <Route path='/lineitems/:orderNumber' element={<Lineitems userProfileData={userProfileData} />} />
+              <Route path='/lineitems/:orderNumber/:index' element={<SingleProduct userProfileData={userProfileData} />} />
+          </Routes>
+      </BrowserRouter>
     </div>
   );
 }
